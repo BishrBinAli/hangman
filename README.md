@@ -102,3 +102,25 @@ class Hangman():
             else:
                 self.check_guess(guess)
 ```
+
+## Milestone 5
+
+Implented the logic of the game
+
+- Created a function to play the game
+
+The function play_game() initialises an object of Hangman class and keeps on asking the user for input by running the ask_for_input() method as long as the number of lives are not 0 and the word has not been guessed. It exits the game if the player runs out of lives or guesses the word correctly.
+
+```python
+def play_game(word_list):
+    game = Hangman(word_list, 5)
+    while (True):
+        if game.num_lives == 0:
+            print("You lost!")
+            break
+        elif game.num_letters > 0:
+            game.ask_for_input()
+        else:
+            print('Congratulations. You won the game!')
+            break
+```
